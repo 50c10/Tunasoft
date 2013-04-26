@@ -40,15 +40,14 @@
                     <a class="brand" href="{% url "vista_principal"%}">TunaSoft</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="{% url "vista_principal"%}">Home</a></li>
                             <li><a href="{% url "vista_about"%}">About</a></li>
                             <li><a href="{% url "vista_contact"%}">Contact</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Diseño Web</a></li>
+                                    <li><a href="#">Sistemas a medida</a></li>
+                                    <li><a href="#">Aplicaciones moviles</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Nav header</li>
                                     <li><a href="#">Separated link</a></li>
@@ -56,11 +55,16 @@
                                 </ul>
                             </li>
                         </ul>
-                        <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
-                            <button type="submit" class="btn">Sign in</button>
+                        {% if user.is_authenticated %}
+                            <a class= "pull-right btn" href="{% url "logout_view"%}">Cerrar Secion</a>
+                        {% else %}
+                        <form class="navbar-form pull-right" action="/login/" method="post" accept-charset="utf-8">
+                            {% csrf_token %}
+                            <input class="span2" type="text" placeholder="Usuario" id="id_username" name="username">
+                            <input class="span2" type="password" placeholder="Password" id="id_password" name="password">
+                            <button type="submit" class="btn">LogIn</button>
                         </form>
+                        {% endif %}
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
