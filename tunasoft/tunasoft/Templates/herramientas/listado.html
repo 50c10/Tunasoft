@@ -3,11 +3,14 @@
 
 {% block content %}
 	<h2>Herramientas Disponibles</h2>
+	{% if herramientas %}
 	<ul>
-		<li>HErra 1</li>
-		<li>HErra 2</li>
-		<li>HErra 3</li>
-		<li>HErra 4</li>
+		{% for h in herramientas %}
+			<li><a href="{{h.url}}">{{h.nombre}}</a></li>
+		{% endfor %}
 	</ul>
     <p>Preciona el link para utilizar la herramienta</p>
+	{% else %}
+		<h2>No hay Herramientas Activas</h2>
+	{% endif %} 
 {% endblock %}
