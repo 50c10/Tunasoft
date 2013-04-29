@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Tunasoft About. {% endblock %}
+
+{% block content %}
+    <h2>Este es el equipo de tunasoft</h2>
+    {% if usuarios %}
+		{% for u in usuarios %}
+			<tr>
+				<td>{{u.User.Username}}</td>
+				<td><img src="/media/{{u.photo}}" width="100px" heigth="100"/></td>
+				<td>{{u.descripcion}}</td>
+			</tr>
+		{% endfor %}
+	{% else %}
+		<h2>No hay usuarios registrados</h2>
+	</table>
+	{% endif %} 
+{% endblock %}

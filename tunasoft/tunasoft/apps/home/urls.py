@@ -7,6 +7,8 @@ urlpatterns = patterns('tunasoft.apps.home.views',
 	url(r'^web/$','web_view',name='web_view'),
 	url(r'^sistemas/$','sistemas_view',name='sistemas_view'),
 	url(r'^movil/$','movil_view',name='movil_view'),
+	url(r'^equipo/$','equipo_view',name='equipo_view'),
+	url(r'^instalaciones/$','instalaciones_view',name='instalaciones_view'),
 
 
 	# Login/logout URLS

@@ -43,15 +43,15 @@
                             <li><a href="{% url "vista_about"%}">About</a></li>
                             <li><a href="{% url "vista_contact"%}">Contact</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Diseño Web</a></li>
-                                    <li><a href="#">Sistemas a medida</a></li>
-                                    <li><a href="#">Aplicaciones moviles</a></li>
+                                    <li><a href="{% url "web_view"%}">Diseño Web</a></li>
+                                    <li><a href="{% url "sistemas_view"%}">Sistemas a medida</a></li>
+                                    <li><a href="{% url "movil_view"%}">Aplicaciones moviles</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
+                                    <li><a href="{% url "equipo_view"%}">Equipo</a></li>
+                                    <li><a href="{% url "instalaciones_view"%}">Instalaciones</a></li>
                                 </ul>
                             </li>
                         </ul>
