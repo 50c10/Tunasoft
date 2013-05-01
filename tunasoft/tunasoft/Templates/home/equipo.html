@@ -5,14 +5,20 @@
     <h2>Este es el equipo de tunasoft</h2>
     {% if usuarios %}
 		{% for u in usuarios %}
-			<tr>
-				<td>{{u.User.Username}}</td>
-				<td><img src="/media/{{u.photo}}" width="100px" heigth="100"/></td>
-				<td>{{u.descripcion}}</td>
-			</tr>
+			<div class="span5 well">
+				<div class="row">
+					<div class="span2"><a href="http://critterapp.pagodabox.com/others/admin" class="thumbnail"><img src="/media/{{u.photo}}" alt=""></a></div>
+					<div class="span2">
+						<p><strong>{{u.user}}</strong></p>
+			          	<p>{{u.descripcion}}</p>
+						<span class=" badge badge-warning">8 messages</span> <span class=" badge badge-info">15 followers</span>
+					</div>
+				</div>
+			</div>
 		{% endfor %}
 	{% else %}
 		<h2>No hay usuarios registrados</h2>
 	</table>
 	{% endif %} 
+
 {% endblock %}
