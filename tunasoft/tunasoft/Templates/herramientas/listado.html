@@ -1,7 +1,13 @@
-{% extends 'base.html' %}
-{% block title %} Tunasoft About. {% endblock %}
-
-{% block content %}
+<div>
+	<ul class="breadcrumb">
+		<li>
+			<a href="#">Home</a> <span class="divider">/</span>
+		</li>
+		<li>
+			<a href="#">Preferences</a>
+		</li>
+	</ul>
+</div>
 	<h2>Herramientas Disponibles</h2>
 	{% if herramientas %}
 	<ul>
@@ -13,4 +19,3 @@
 	{% else %}
 		<h2>No hay Herramientas Activas</h2>
 	{% endif %} 
-{% endblock %}

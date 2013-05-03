@@ -54,7 +54,7 @@ def logout_view(request):
 def login_view(request):
 	mensaje = ""
 	if request.user.is_authenticated():
-		return HttpResponseRedirect('/listado')
+		return HttpResponseRedirect('/dashboard')
 	else:
 		if request.method == "POST":
 			form = LoginForm(request.POST)
@@ -64,7 +64,7 @@ def login_view(request):
 				usuario = authenticate(username=username,password=password)
 				if usuario is not None and usuario.is_active:
 					login(request, usuario)
-					return HttpResponseRedirect('/listado')
+					return HttpResponseRedirect('/dashboard')
 				else:
 					mensaje = "usuario o password incorrecto"
 		form = LoginForm()
@@ -78,3 +78,4 @@ def equipo_view(request):
 
 def instalaciones_view(request):
 	return render_to_response('home/instalaciones.html', context_instance=RequestContext(request))
+

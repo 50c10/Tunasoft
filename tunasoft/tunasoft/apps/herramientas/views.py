@@ -9,3 +9,11 @@ def listado_view(request):
 	herramientas = herramienta.objects.filter(status=True)
 	ctx = {'herramientas':herramientas}
 	return render_to_response('herramientas/listado.html', ctx, context_instance=RequestContext(request))
+
+@login_required(login_url='/login/')
+def dashboard_view(request):
+	return render_to_response('herramientas/dashboard.html', context_instance=RequestContext(request))
+
+@login_required(login_url='/login/')
+def preferences_view(request):
+	return render_to_response('herramientas/preferences.html', context_instance=RequestContext(request))
