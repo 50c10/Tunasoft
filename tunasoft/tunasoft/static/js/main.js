@@ -5,4 +5,10 @@ $(document).ready(function() {
       $("#listado").click(function(event){
           $('#content').load('/listado/');
       });
+      $("#calendario").click(function(event){
+          $('#content').load('/calendario/');
+      });
+      $("#miembros").click(function(event){
+          $('#content').load('/miembros/');
+      });
    });

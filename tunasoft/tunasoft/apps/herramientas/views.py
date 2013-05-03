@@ -11,6 +11,14 @@ def listado_view(request):
 	return render_to_response('herramientas/listado.html', ctx, context_instance=RequestContext(request))
 
 @login_required(login_url='/login/')
+def calendario_view(request):
+	return render_to_response('herramientas/calendario.html', context_instance=RequestContext(request))
+
+@login_required(login_url='/login/')
+def miembros_view(request):
+	return render_to_response('herramientas/miembros.html', context_instance=RequestContext(request))
+
+@login_required(login_url='/login/')
 def dashboard_view(request):
 	return render_to_response('herramientas/dashboard.html', context_instance=RequestContext(request))
 
