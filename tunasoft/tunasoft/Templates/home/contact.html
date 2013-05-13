@@ -3,11 +3,10 @@
 
 {% block content %}
 {% if info_enviado %}
-	<p>Gracias por enviar el coment luego nos leemos Yeaa.</p>
-	<p>La informacion recivida fue la siguiente</p>
-	<p>Email {{email}}</p>
-	<p>titulo {{titulo}}</p>
-	<p>texto {{texto}}</p>
+<div class="alert alert-success">
+	<h2>Gracias por Comunicarte.</h2>
+	<p>Pronto nos pondremos en contacto¡¡¡¡</p>
+</div>
 
 {% else %}
 	<form action="." method="POST">

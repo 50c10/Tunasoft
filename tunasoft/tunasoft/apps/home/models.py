@@ -13,3 +13,8 @@ class UserProfile(models.Model):
 
 	def __unicode__(self):
 		return self.user.username
+
+class contacto(models.Model):
+	Email = models.EmailField()
+	Titulo = models.CharField(max_length=60)
+	Texto = models.CharField(max_length=500)

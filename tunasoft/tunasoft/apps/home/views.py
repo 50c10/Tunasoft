@@ -6,6 +6,7 @@ from django.template import RequestContext
 from tunasoft.apps.home.forms import LoginForm ,ContactoForm
 from django.core.mail import EmailMultiAlternatives
 from tunasoft.apps.home.models import UserProfile
+from tunasoft.apps.home.models import contacto
 def index_view(request):
 	return render_to_response('home/index.html', context_instance=RequestContext(request))
 
@@ -26,13 +27,18 @@ def contact_view(request):
 			titulo = formulario.cleaned_data['Titulo']
 			texto = formulario.cleaned_data['Texto']
 
+			contact = contacto()
+			contact.Email = email
+			contact.Titulo = titulo
+			contact.Texto = texto
+			contact.save()
 			# COnfiguraciond de envio de correo
 
-			to_admin = 'pako50c10@gmail.com'
-			html_content = "Informacion recibida <br><br><br>Mensaje<br><br><br>%s"%(texto)
-			msg = EmailMultiAlternatives('Correo de Contacto',html_content,'from@server.com',[to_admin])
-			msg.attach_alternative(html_content,'text/html')
-			msg.send()
+			#to_admin = 'pako50c10@gmail.com'
+			#html_content = "Informacion recibida <br><br><br>Mensaje<br><br><br>%s"%(texto)
+			#msg = EmailMultiAlternatives('Correo de Contacto',html_content,'from@server.com',[to_admin])
+			#msg.attach_alternative(html_content,'text/html')
+			#msg.send()
 	else:
 		formulario = ContactoForm()
 	ctx = {'form':formulario, 'email':email, 'titulo':titulo, 'texto':texto, 'info_enviado':info_enviado}
