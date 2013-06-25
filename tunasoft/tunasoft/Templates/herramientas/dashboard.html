@@ -100,6 +100,15 @@
         	<div class="row-fluid">
         		<div class="box span12">
         			<p>uasdasdasdasd</p>
+                    {% if proyectos %}
+                    <ul>
+                        {% for p in proyectos %}
+                            <li>{{p.nombre}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                        <h2>No Tienes nungun proyecto actual mente</h2>
+                    {% endif %} 
         		</div>
         	</div>
         </div>

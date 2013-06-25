@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tunasoft.apps.herramientas.models import proyecto
 
 # Create your models here.
 class UserProfile(models.Model):
@@ -10,6 +11,7 @@ class UserProfile(models.Model):
 	user = models.OneToOneField(User)
 	photo = models.ImageField(upload_to=url)
 	descripcion = models.TextField(max_length=300)
+	proyectos = models.ManyToManyField(proyecto)
 
 	def __unicode__(self):
 		return self.user.username
