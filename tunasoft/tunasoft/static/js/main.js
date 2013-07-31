@@ -11,4 +11,7 @@ $(document).ready(function() {
       $("#miembros").click(function(event){
           $('#content').load('/miembros/');
       });
+      $("#presupuestos").click(function(event){
+          $('#content').load('/presupuestos/');
+      });
    });

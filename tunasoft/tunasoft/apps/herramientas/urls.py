@@ -6,4 +6,5 @@ urlpatterns = patterns('tunasoft.apps.herramientas.views',
 	url(r'^preferences/$','preferences_view',name='preferences_view'),
 	url(r'^calendario/$','calendario_view',name='calendario_view'),
 	url(r'^miembros/$','miembros_view',name='miembros_view'),
+	url(r'^presupuestos/$','presupuestos_view',name='presupuestos_view'),
 )

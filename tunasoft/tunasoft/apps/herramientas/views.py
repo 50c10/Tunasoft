@@ -28,3 +28,7 @@ def dashboard_view(request):
 @login_required(login_url='/login/')
 def preferences_view(request):
 	return render_to_response('herramientas/preferences.html', context_instance=RequestContext(request))
+
+@login_required(login_url='/login/')
+def presupuestos_view(request):
+	return render_to_response('herramientas/presupuestos.html', context_instance=RequestContext(request))
