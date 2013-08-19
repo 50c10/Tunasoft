@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import patterns, url
+from django.views.generic import TemplateView
 
 urlpatterns = patterns('tunasoft.apps.herramientas.views',
 	url(r'^listado/$','listado_view',name='vista_Listado'),
@@ -7,4 +8,5 @@ urlpatterns = patterns('tunasoft.apps.herramientas.views',
 	url(r'^calendario/$','calendario_view',name='calendario_view'),
 	url(r'^miembros/$','miembros_view',name='miembros_view'),
 	url(r'^presupuestos/$','presupuestos_view',name='presupuestos_view'),
+	url(r'^presupuestos/success/$', TemplateView.as_view(template_name='herramientas/presupuestos.html'),name="presupuestos_success"),
 )
